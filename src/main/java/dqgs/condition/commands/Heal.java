@@ -14,8 +14,10 @@ public class Heal implements Listener, CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (command.getName().equalsIgnoreCase("heal")) {
-                player.setHealth(player.getMaxHealth());
-                player.sendMessage(Util.getConfigPath("Heal"));
+                if (player.hasPermission("condition.heal")) {
+                    player.setHealth(player.getMaxHealth());
+                    player.sendMessage(Util.getConfigPath("Heal"));
+                }
             }
         }
         return false; }

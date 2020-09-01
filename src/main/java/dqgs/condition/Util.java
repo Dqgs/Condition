@@ -9,7 +9,6 @@ public class Util {
         return path;
     }
     public static ItemStack getItemInHand(Player player){
-        ItemStack itemInHand = player.getInventory().getItemInHand();
-        return itemInHand;
+        return player.getInventory().getItemInHand();
     }
 }

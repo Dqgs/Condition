@@ -14,12 +14,14 @@ public class Fly implements Listener, CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (command.getName().equalsIgnoreCase("fly")) {
-                if (isFlying(player)){
-                    player.setAllowFlight(false);
-                    player.sendMessage(Util.getConfigPath("FlightEnable"));
-                } else {
-                    player.setAllowFlight(true);
-                    player.sendMessage(Util.getConfigPath("FlightDisable"));
+                if (player.hasPermission("condition.fly")) {
+                    if (isFlying(player)) {
+                        player.setAllowFlight(false);
+                        player.sendMessage(Util.getConfigPath("FlightEnable"));
+                    } else {
+                        player.setAllowFlight(true);
+                        player.sendMessage(Util.getConfigPath("FlightDisable"));
+                    }
                 }
             }
         }

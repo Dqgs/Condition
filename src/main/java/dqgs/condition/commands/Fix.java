@@ -15,11 +15,13 @@ public class Fix implements Listener, CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (command.getName().equalsIgnoreCase("fix")) {
-                ItemStack item = Util.getItemInHand(player);
-                short maxDurability =item.getType().getMaxDurability();
+                if (player.hasPermission("condition.fix")) {
+                    ItemStack item = Util.getItemInHand(player);
+                    short maxDurability = item.getType().getMaxDurability();
 
-                item.setDurability(maxDurability);
-                player.sendMessage(Util.getConfigPath("Fix"));
+                    item.setDurability(maxDurability);
+                    player.sendMessage(Util.getConfigPath("Fix"));
+                }
             }
         }
         return false; }

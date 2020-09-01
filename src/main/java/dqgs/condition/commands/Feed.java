@@ -14,9 +14,11 @@ public class Feed implements Listener, CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (command.getName().equalsIgnoreCase("feed")) {
-                player.setFoodLevel(20);
-                player.setSaturation(2);
-                player.sendMessage(Util.getConfigPath("Feed"));
+                if (player.hasPermission("condition.feed")) {
+                    player.setFoodLevel(20);
+                    player.setSaturation(2);
+                    player.sendMessage(Util.getConfigPath("Feed"));
+                }
             }
         }
         return false; }

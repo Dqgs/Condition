@@ -18,7 +18,9 @@ public class Ping implements Listener, CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (command.getName().equalsIgnoreCase("ping")) {
-                player.sendMessage(Condition.getInstance().getConfig().getString("Ping").replace("%ping%", String.valueOf(getPing(player))));
+                if (player.hasPermission("condition.ping")) {
+                    player.sendMessage(Condition.getInstance().getConfig().getString("Ping").replace("%ping%", String.valueOf(getPing(player))));
+                }
             }
         }
         return false; }

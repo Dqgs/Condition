@@ -15,9 +15,11 @@ public class Craft implements Listener, CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (command.getName().equalsIgnoreCase("craft")) {
-                Location location = player.getLocation();
-                player.openWorkbench(location, true);
-                player.sendMessage(Util.getConfigPath("Craft"));
+                if (player.hasPermission("condition.Craft")) {
+                    Location location = player.getLocation();
+                    player.openWorkbench(location, true);
+                    player.sendMessage(Util.getConfigPath("Craft"));
+                }
             }
         }
         return false; }
