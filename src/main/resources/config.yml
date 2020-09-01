@@ -1,0 +1,9 @@
+#Welcome this is the Config file to edit all your messages
+
+FlightDisable: 'Flight Disabled'
+FlightEnable: 'Flight Enabled'
+
+Heal: 'You have been Healed'
+Craft: 'Opened the crafting table.'
+Feed: 'You have been fed'
+Fix: 'You have repaired your item in your hand'

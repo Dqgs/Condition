@@ -1,0 +1,29 @@
+name: Condition
+version: ${project.version}
+main: dqgs.conditioncommands.Condition
+
+commands:
+  craft:
+    description: Pulls up the crafting grid
+    usage: /<command>
+    aliases: [workbench]
+  feed:
+    description: Satisfy the hunger.
+    usage: /<command>
+    aliases: [eat,eeat,efeed]
+  fix:
+    description: Fixes your item in your hand
+    usage: /<command>
+    aliases: [repair]
+  fly:
+    description: Allows you to fly
+    usage: /<command>
+    aliases: [flight]
+  heal:
+    description: Heal you
+    usage: /<command>
+    aliases: [eheal]
+  ping:
+    description: Shows your ping
+    usage: /<command>
+    aliases: [pong]
